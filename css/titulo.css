@@ -1,0 +1,7 @@
+div{
+    text-align: center;
+    color: white;
+    background-color: rgb(0, 0, 0);
+    border-radius: 10px;
+    display: grid;
+}

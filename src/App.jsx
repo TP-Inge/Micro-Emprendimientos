@@ -1,7 +1,12 @@
+import "../css/titulo.css"
+
 
 function App() {
   return (
-  <h1>Hola mundo</h1>
+    <div>
+      <h1>Micro-Emprendimientos</h1>
+    </div>
+  
   )
 }
 
