@@ -1,14 +1,23 @@
-import "../css/title.css"
-import Login from '../components/Login'
+import Login from "../components/Login";
+import { useState } from "react";
+import { PantallaPrincipal } from "../components/PantallaPrincipal";
 
 function App() {
+  const [submit, setSubmit] = useState(false);
+
+  const handleSubmit = () => {
+    setSubmit(!submit);
+  };
+
   return (
     <>
-      <h1 className="title">Micro-Emprendimientos</h1>
-      <Login />
+      {!submit 
+          ? 
+        <Login handleSubmit={handleSubmit} />
+          :
+        <PantallaPrincipal/>}
     </>
-  
-  )
+  );
 }
 
-export default App
+export default App;
