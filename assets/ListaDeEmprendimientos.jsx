@@ -1,4 +1,4 @@
-export const emprendimientos = [
+const emprendimientos = [
     "Tienda en línea de productos artesanales",
     "Consultoría en marketing digital",
     "Servicio de desarrollo de aplicaciones móviles",
@@ -16,5 +16,5 @@ export const emprendimientos = [
     "Servicio de reparación de dispositivos electrónicos"
   ];
   
-
+export default emprendimientos;
   
