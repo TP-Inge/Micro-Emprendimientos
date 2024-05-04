@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../css/pantallaPrincipal.css";
 import RegistrarForm from "../components/RegistrarForm";
-import emprendimientos from '../assets/ListaDeEmprendimientos'
+import Emprendimientos from './Emprendimientos'
 
 export const PantallaPrincipal = () => {
   const [mostrarFormulario, setMostrarFormulario] = useState(false);
@@ -28,11 +28,7 @@ export const PantallaPrincipal = () => {
               </button>
             </section>
             <h2>Lista de Emprendimientos</h2>
-            <ol>
-              {emprendimientos.map((emprendimiento, index) => (
-                <li key={index}>{emprendimiento}</li>
-              ))}
-            </ol>
+            <Emprendimientos/>
           </>
         )}
       </section>
