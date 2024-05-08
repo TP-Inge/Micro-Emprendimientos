@@ -3,6 +3,7 @@ import "../css/pantallaPrincipal.css";
 import RegistrarForm from "../components/RegistrarForm";
 import Emprendimientos from './Emprendimientos'
 
+
 export const PantallaPrincipal = () => {
   const [mostrarFormulario, setMostrarFormulario] = useState(false);
 
@@ -18,14 +19,15 @@ export const PantallaPrincipal = () => {
         ) : (
           <>
             <h1>Busca Emprendimientos</h1>
+            <button id="register_button" onClick={handleRegistrar}>
+                Registrar Emprendimiento
+              </button>
             <div className="search-bar">
               <input type="text" placeholder="Buscar emprendimientos..." />
               <button>Buscar</button>
             </div>
             <section className="emprendimientos-section">
-              <button onClick={handleRegistrar}>
-                Registrar Emprendimiento
-              </button>
+            
             </section>
             <h2>Lista de Emprendimientos</h2>
             <Emprendimientos/>
