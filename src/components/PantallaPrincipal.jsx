@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../css/pantallaPrincipal.css";
-import RegistrarForm from "../components/RegistrarForm";
+import RegistrarForm from "./RegistrarForm";
 import Emprendimientos from './Emprendimientos'
 
 

@@ -1,6 +1,6 @@
-import Login from "../components/Login";
+import Login from "../src/components/Login";
 import { useState } from "react";
-import { PantallaPrincipal } from "../components/PantallaPrincipal";
+import { PantallaPrincipal } from "../src/components/PantallaPrincipal";
 
 function App() {
   const [submit, setSubmit] = useState(false);
