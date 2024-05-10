@@ -1,35 +1,45 @@
-import React, { useState } from "react";
-import listaEmprendimientos from "../assets/ListaDeEmprendimientos";
+import React, { useEffect, useState } from "react";
 import VerDetalle from './VerDetalle';
+import axios from 'axios';
 import "../css/pantallaPrincipal.css";
 
 const Emprendimientos = () => {
   const [verDetalle, setVerDetalle] = useState(false);
   const [indiceEmprendimiento, setIndiceEmprendimiento] = useState(null);
+  const [emprendimientos, setEmprendimientos] = useState([]);
 
   const handleVerDetalle = (index) => {
     setIndiceEmprendimiento(index);
     setVerDetalle(true);
   };
 
+  useEffect(() => {
+    axios.get("../../data.json")
+      .then(function(response){
+        setEmprendimientos(response.data.emprendimientos);
+      })
+      .catch(function(error){
+        console.log("error de mierda", error);
+      });
+  }, []);
+
   return (
     <>
       {verDetalle ? (
-        <VerDetalle emprendimiento = {listaEmprendimientos[indiceEmprendimiento]} />
+        <VerDetalle 
+          nombreEmprendimiento={emprendimientos[indiceEmprendimiento].nombre} 
+          descripcionEmprendimiento={emprendimientos[indiceEmprendimiento].descripcion} 
+        />
       ) : (
-        
         <div className="grid-container">
-          {listaEmprendimientos.map((emprendimiento, index) => (
+          {emprendimientos.map((emprendimiento, index) => (
             <div className="grid-item" key={index}>
-          
-          
-              <div id="titulo">{emprendimiento}</div>
+              <div id="titulo">{emprendimiento.nombre}</div>
               <img src="../assets/3891670.png" alt="" />
-              <div >Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo nesciunt ex ullam quod dolorem assumenda sit libero laboriosam tempora nam ratione quam nulla ab quae, atque eligendi eos cum ipsa!</div>
+              <div>{emprendimiento.descripcion}</div>
               <button onClick={() => handleVerDetalle(index)}>
                 Ver detalle
               </button>
-             
             </div>
           ))}
         </div>
