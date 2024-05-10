@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import "../css/registroForm.css"
+import "../css/registroForm.css";
+import { NormalizarUbicaciones } from './NormalizarUbicaciones'; 
 
 const RegistrarForm = () => {
   const [nombre, setNombre] = useState('');
@@ -10,17 +11,16 @@ const RegistrarForm = () => {
   const [ubicacionEmprendimiento, setUbicacionEmprendimiento] = useState('');
   const [vinculoOrganizacion, setVinculoOrganizacion] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log({
-      nombre,
-      telefono,
-      correo,
-      nombreEmprendimiento,
-      descripcionEmprendimiento,
-      ubicacionEmprendimiento,
-      vinculoOrganizacion
-    });
+    try {
+      const coordenadas = await NormalizarUbicaciones(ubicacionEmprendimiento);
+      console.log({
+        coordenadas, 
+      });
+    } catch (error) {
+      console.error('Error al normalizar la ubicación:', error);
+    }
   };
 
   return (
