@@ -1,0 +1,26 @@
+{
+    "emprendimientos": [
+      {
+        "id": "1",
+        "nombre": "TechHub",
+        "descripcion": "Una plataforma en línea que conecta a startups con inversores.",
+        "fundacion": "2015",
+        "ubicacion": "San Francisco, California, EE. UU."
+      },
+      {
+        "id": "2",
+        "nombre": "EcoGrow",
+        "descripcion": "Una empresa que desarrolla tecnologías sostenibles para la agricultura urbana.",
+        "fundacion": "2017",
+        "ubicacion": "Berlín, Alemania"
+      },
+      {
+        "id": "3",
+        "nombre": "HealthTech Solutions",
+        "descripcion": "Una startup que utiliza inteligencia artificial para mejorar el diagnóstico médico.",
+        "fundacion": "2016",
+        "ubicacion": "Londres, Reino Unido"
+      }
+    ]
+  }
+  
