@@ -45,13 +45,21 @@ const RegistrarForm = ({ setMostrarFormulario }) => {
       setMostrarFormulario(false);
   
     } catch (error) {
-      console.error('Error al normalizar la ubicación:', error);
+      if (error.message === 'Múltiples posibles ubicaciones encontradas. Por favor, sea más específico.') {
+        alert('Se encontraron múltiples posibles ubicaciones. Por favor, sea más específico.');
+      } else {
+        console.error('Error al normalizar la ubicación:', error);
+      }
     }
   };
   
   return (
     <form onSubmit={handleSubmit}>
       <h2>Registro de Colaborador</h2>
+      <div>
+        <label htmlFor="nombreEmprendimiento">Nombre del Emprendimiento:</label>
+        <input type="text" id="nombreEmprendimiento" value={nombreEmprendimiento} onChange={(e) => setNombreEmprendimiento(e.target.value)} required />
+      </div>
       <div>
         <label htmlFor="nombre">Nombre:</label>
         <input type="text" id="nombre" value={nombre} onChange={(e) => setNombre(e.target.value)} required />
@@ -63,10 +71,6 @@ const RegistrarForm = ({ setMostrarFormulario }) => {
       <div>
         <label htmlFor="correo">Correo:</label>
         <input type="email" id="correo" value={correo} onChange={(e) => setCorreo(e.target.value)} required />
-      </div>
-      <div>
-        <label htmlFor="nombreEmprendimiento">Nombre del Emprendimiento:</label>
-        <input type="text" id="nombreEmprendimiento" value={nombreEmprendimiento} onChange={(e) => setNombreEmprendimiento(e.target.value)} required />
       </div>
       <div>
         <label htmlFor="descripcionEmprendimiento">Descripción del Emprendimiento:</label>

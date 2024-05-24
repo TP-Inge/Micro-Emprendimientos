@@ -14,21 +14,9 @@ const Emprendimientos = () => {
     setVerDetalle(true);
   };
 
-  /*useEffect(() => {
-    axios.get("../../data.json")
-      .then(function(response){
-        setEmprendimientos(response.data.emprendimientos);
-        console.log("Emprendimientos:", response.data.emprendimientos);
-      })
-      .catch(function(error){
-        console.log("error de mierda", error);
-      });
-      console.log("se renderizo")
-  }, []);*/
 
 
   useEffect(() => {
-    // Obtener los emprendimientos del localStorage al cargar el componente
     const localStorageData = localStorage.getItem('emprendimientos');
     if (localStorageData) {
       const parsedData = JSON.parse(localStorageData);
