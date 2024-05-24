@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import "../css/registroForm.css";
 import { NormalizarUbicaciones } from './NormalizarUbicaciones'; 
 
-const RegistrarForm = () => {
+const RegistrarForm = ({ setMostrarFormulario }) => {
   const [nombre, setNombre] = useState('');
   const [telefono, setTelefono] = useState('');
   const [correo, setCorreo] = useState('');
@@ -15,14 +15,40 @@ const RegistrarForm = () => {
     e.preventDefault();
     try {
       const coordenadas = await NormalizarUbicaciones(ubicacionEmprendimiento);
-      console.log({
-        coordenadas, 
-      });
+      
+      if (!coordenadas.x || !coordenadas.y) {
+        alert('Debe ingresar una dirección válida.');
+        return;
+      }
+      
+      const nuevoEmprendimiento = {
+        id: Date.now().toString(),
+        nombre: nombreEmprendimiento,
+        telefono: telefono,
+        correo: correo,
+        descripcion: descripcionEmprendimiento,
+        ubicacion: ubicacionEmprendimiento,
+        vinculoOrganizacion: vinculoOrganizacion,
+        coordenadas: coordenadas
+      };
+
+      const localStorageData = localStorage.getItem('emprendimientos');
+
+      const emprendimientos = localStorageData ? JSON.parse(localStorageData) : [];
+
+      emprendimientos.push(nuevoEmprendimiento);
+
+      const jsonData = JSON.stringify(emprendimientos);
+
+      localStorage.setItem('emprendimientos', jsonData);
+
+      setMostrarFormulario(false);
+  
     } catch (error) {
       console.error('Error al normalizar la ubicación:', error);
     }
   };
-
+  
   return (
     <form onSubmit={handleSubmit}>
       <h2>Registro de Colaborador</h2>
