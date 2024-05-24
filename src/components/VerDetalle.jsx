@@ -3,7 +3,7 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css"; 
 
 const VerDetalle = ({ nombreEmprendimiento, descripcionEmprendimiento, coordenadaX, coordenadaY }) => {
-  const position = [coordenadaX, coordenadaY];
+  const position = [coordenadaY, coordenadaX]
 
   return (
     <>
