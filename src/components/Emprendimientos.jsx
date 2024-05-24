@@ -31,6 +31,8 @@ const Emprendimientos = () => {
         <VerDetalle 
           nombreEmprendimiento={emprendimientos[indiceEmprendimiento].nombre} 
           descripcionEmprendimiento={emprendimientos[indiceEmprendimiento].descripcion} 
+          coordenadaX={emprendimientos[indiceEmprendimiento].coordenadas.x}
+          coordenadaY={emprendimientos[indiceEmprendimiento].coordenadas.y}
         />
       ) : (
         <div className="grid-container">

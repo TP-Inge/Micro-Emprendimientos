@@ -1,6 +1,6 @@
 import React from "react";
 
-const VerDetalle = ( {nombreEmprendimiento, descripcionEmprendimiento} ) => {
+const VerDetalle = ( {nombreEmprendimiento, descripcionEmprendimiento, coordenadaX, coordenadaY} ) => {
   
 
 
