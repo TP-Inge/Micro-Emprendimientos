@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import VerDetalle from './VerDetalle';
-import axios from 'axios';
 import "../css/pantallaPrincipal.css";
 
 const Emprendimientos = () => {
