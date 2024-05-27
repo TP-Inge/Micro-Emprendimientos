@@ -1,56 +1,76 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
 
-form {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-  }
-  
-  form h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  form div {
-    margin-bottom: 15px;
-  }
-  
-  form label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-  }
-  
-  form input[type="text"],
-  form input[type="tel"],
-  form input[type="email"],
-  form textarea {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  form textarea {
-    resize: vertical;
-  }
-  
-  form button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  form button:hover {
-    background-color: #0056b3;
-  }
-  
+.form-container, .preview-container {
+  width: 48%;
+}
+
+.form-container {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2, .preview-container h2 {
+  text-align: center;
+}
+
+.preview-box {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.preview-box p {
+  margin: 10px 0;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+label {
+  font-weight: bold;
+}
+
+.preview-box{
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.preview-box h1{
+  align-content: center;
+  height: 5rem;
+  background: radial-gradient(circle, rgba(34,193,195,1) 9%, rgba(16,74,228,1) 58%, rgba(72,45,253,1) 100%);
+  border-radius: 10px;
+}

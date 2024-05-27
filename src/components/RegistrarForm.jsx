@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
+import {NormalizarUbicaciones} from './NormalizarUbicaciones'
 import "../css/registroForm.css";
-import { NormalizarUbicaciones } from './NormalizarUbicaciones'; 
 
 const RegistrarForm = ({ setMostrarFormulario }) => {
   const [nombre, setNombre] = useState('');
@@ -54,49 +54,61 @@ const RegistrarForm = ({ setMostrarFormulario }) => {
       }
     }
   };
-  
+
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>Registro de Colaborador</h2>
-      <div>
-        <label htmlFor="nombreEmprendimiento">Nombre del Emprendimiento:</label>
-        <input type="text" id="nombreEmprendimiento" value={nombreEmprendimiento} onChange={(e) => setNombreEmprendimiento(e.target.value)} required />
+    <div className="container">
+      <div className="form-container">
+        <h2>Registrar Emprendimiento</h2>
+        <form onSubmit={handleSubmit}>
+          <div>
+            <label htmlFor="nombreEmprendimiento">Nombre del Emprendimiento:</label>
+            <input type="text" id="nombreEmprendimiento" value={nombreEmprendimiento} onChange={(e) => setNombreEmprendimiento(e.target.value)} required />
+          </div>
+          <div>
+            <label htmlFor="nombre">Nombre:</label>
+            <input type="text" id="nombre" value={nombre} onChange={(e) => setNombre(e.target.value)} required />
+          </div>
+          <div>
+            <label htmlFor="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" value={telefono} onChange={(e) => setTelefono(e.target.value)} required />
+          </div>
+          <div>
+            <label htmlFor="correo">Correo:</label>
+            <input type="email" id="correo" value={correo} onChange={(e) => setCorreo(e.target.value)} required />
+          </div>
+          <div>
+            <label htmlFor="descripcionEmprendimiento">Descripción del Emprendimiento:</label>
+            <textarea id="descripcionEmprendimiento" value={descripcionEmprendimiento} onChange={(e) => setDescripcionEmprendimiento(e.target.value)} required />
+          </div>
+          <div>
+            <label htmlFor="ubicacionEmprendimiento">Ubicación del Emprendimiento:</label>
+            <input type="text" id="ubicacionEmprendimiento" value={ubicacionEmprendimiento} onChange={(e) => setUbicacionEmprendimiento(e.target.value)} required />
+          </div>
+          <div>
+            <label htmlFor="vinculoOrganizacion">Vínculo con la Organización:</label>
+            <input type="text" id="vinculoOrganizacion" value={vinculoOrganizacion} onChange={(e) => setVinculoOrganizacion(e.target.value)} required />
+          </div>
+          <div>
+            <label htmlFor="ubicacionDisponible">Ubicación Disponible:</label>
+            <input
+              type="checkbox"
+              id="ubicacionDisponible"
+              checked={ubicacionDisponible}
+              onChange={(e) => setUbicacionDisponible(e.target.checked)}
+            />
+          </div>
+          <button type="submit">Registrarse</button>
+        </form>
       </div>
-      <div>
-        <label htmlFor="nombre">Nombre:</label>
-        <input type="text" id="nombre" value={nombre} onChange={(e) => setNombre(e.target.value)} required />
+      <div className="preview-container">
+        <h2>Previsualización</h2>
+        <div className="preview-box">
+          <h1> {nombreEmprendimiento} </h1>
+          <p> {descripcionEmprendimiento} </p>
+          <button>ver detalle</button>
+        </div>
       </div>
-      <div>
-        <label htmlFor="telefono">Teléfono:</label>
-        <input type="tel" id="telefono" value={telefono} onChange={(e) => setTelefono(e.target.value)} required />
-      </div>
-      <div>
-        <label htmlFor="correo">Correo:</label>
-        <input type="email" id="correo" value={correo} onChange={(e) => setCorreo(e.target.value)} required />
-      </div>
-      <div>
-        <label htmlFor="descripcionEmprendimiento">Descripción del Emprendimiento:</label>
-        <textarea id="descripcionEmprendimiento" value={descripcionEmprendimiento} onChange={(e) => setDescripcionEmprendimiento(e.target.value)} required />
-      </div>
-      <div>
-        <label htmlFor="ubicacionEmprendimiento">Ubicación del Emprendimiento:</label>
-        <input type="text" id="ubicacionEmprendimiento" value={ubicacionEmprendimiento} onChange={(e) => setUbicacionEmprendimiento(e.target.value)} required />
-      </div>
-      <div>
-        <label htmlFor="vinculoOrganizacion">Vínculo con la Organización:</label>
-        <input type="text" id="vinculoOrganizacion" value={vinculoOrganizacion} onChange={(e) => setVinculoOrganizacion(e.target.value)} required />
-      </div>
-      <div>
-        <label htmlFor="ubicacionDisponible">Ubicación Disponible:</label>
-        <input
-          type="checkbox"
-          id="ubicacionDisponible"
-          checked={ubicacionDisponible}
-          onChange={(e) => setUbicacionDisponible(e.target.checked)}
-        />
-      </div>
-      <button type="submit">Registrarse</button>
-    </form>
+    </div>
   );
 };
 

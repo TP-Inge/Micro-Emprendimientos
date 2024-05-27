@@ -62,7 +62,6 @@ h1{
     list-style-type: none;
     grid-template-columns: auto auto auto;
     display: inline-grid;
-   /* background: radial-gradient(circle, rgba(72,45,253,1) 0%, rgba(16,74,228,1) 58%, rgba(34,193,195,1) 100%);*/
     justify-items: stretch;
     align-items: stretch;
   }
