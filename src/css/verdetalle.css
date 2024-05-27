@@ -6,14 +6,14 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f0f0f0;
+    background-color: #353b48; /* Cambiado */
   }
   
-
+  
   .details-container {
     display: flex;
     justify-content: space-between;
-    background-color: #fff;
+    background-color: #f9f9f9; /* Cambiado */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -22,7 +22,7 @@ body {
     margin: 20px;
   }
   
-
+  
   .details-text {
     flex: 1;
     padding-right: 20px;
@@ -30,13 +30,13 @@ body {
   
   .details-text h1 {
     font-size: 24px;
-    color: #333;
+    color: #dcdde1; 
     margin-bottom: 10px;
   }
   
   .details-text p {
     font-size: 16px;
-    color: #666;
+    color: #dcdde1;
     line-height: 1.6;
   }
   

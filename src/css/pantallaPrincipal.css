@@ -1,104 +1,105 @@
-body{
+body {
   background-color: rgb(0, 175, 175);
+  font-family: Arial, sans-serif;
 }
 
-h2{
+h2 {
   text-align: center;
 }
 
-h1{
+h1 {
   text-align: center;
 }
-#register_button{
+
+#register_button {
   width: 10%;
- 
 }
 
 .search-section {
-    display: flex;
-    flex-direction: column;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
 .search-section h1 {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 20px;
-  }
-  
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
 .search-bar {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
 .search-bar input[type="text"] {
-    flex: 1;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .search-bar button {
-    padding: 10px 20px;
-    margin-left: 10px;
-    font-size: 16px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .search-bar button:hover {
-    background-color: #0056b3;
-  }
-  
-  .grid-container {
-    list-style-type: none;
-    grid-template-columns: auto auto auto;
-    display: inline-grid;
-    justify-items: stretch;
-    align-items: stretch;
-  }
-  
-  .grid-item {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
 
-    border: 1px solid rgba(0, 0, 0, 0.8);
-    border-radius: 10px;
-    padding: 10px;
-    margin: 10px;
-    font-size: 30px;
-    text-align: center;
-  }
-  
-  .grid-item #titulo{
-    align-content: center;
-    height: 5rem;
-    background: radial-gradient(circle, rgba(34,193,195,1) 9%, rgba(16,74,228,1) 58%, rgba(72,45,253,1) 100%);
-    border-radius: 10px;
-  }
+.search-bar button {
+  padding: 10px 20px;
+  margin-left: 10px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 
-  .grid-item img {
-    margin: 2rem;
-  }
- .name {
-    background-color: #007bff;
-  }
-  button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 5px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
+.search-bar button:hover {
+  background-color: #0056b3;
+}
 
+.grid-container {
+  list-style-type: none;
+  grid-template-columns: auto auto auto;
+  display: inline-grid;
+  justify-items: stretch;
+  align-items: stretch;
+}
+
+.grid-item {
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.grid-item #titulo {
+  align-content: center;
+  height: 5rem;
+  background: radial-gradient(circle, rgba(34, 193, 195, 1) 9%, rgba(16, 74, 228, 1) 58%, rgba(72, 45, 253, 1) 100%);
+  border-radius: 10px;
+}
+
+.grid-item img {
+  margin: 2rem;
+}
+
+.name {
+  background-color: #007bff;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}

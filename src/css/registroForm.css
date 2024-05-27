@@ -9,7 +9,7 @@
 }
 
 .form-container {
-  background-color: #f9f9f9;
+  background-color: #353b48;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -17,10 +17,11 @@
 
 .form-container h2, .preview-container h2 {
   text-align: center;
+  color: #dcdde1;
 }
 
 .preview-box {
-  border: 1px solid #ccc;
+  border: 1px solid #273c75;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -28,6 +29,7 @@
 
 .preview-box p {
   margin: 10px 0;
+  color: #dcdde1;
 }
 
 input[type="text"],
@@ -39,11 +41,12 @@ textarea {
   margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  background-color: #dcdde1;
 }
 
 button[type="submit"] {
-  background-color: #007bff;
-  color: #fff;
+  background-color: #192a56;
+  color: #dcdde1;
   padding: 10px 20px;
   border: none;
   border-radius: 4px;
@@ -52,14 +55,15 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-  background-color: #0056b3;
+  background-color: #2f3640;
 }
 
 label {
   font-weight: bold;
+  color: #dcdde1;
 }
 
-.preview-box{
+.preview-box {
   border: 1px solid rgba(0, 0, 0, 0.8);
   border-radius: 10px;
   padding: 10px;
@@ -68,9 +72,9 @@ label {
   text-align: center;
 }
 
-.preview-box h1{
+.preview-box h1 {
   align-content: center;
   height: 5rem;
-  background: radial-gradient(circle, rgba(34,193,195,1) 9%, rgba(16,74,228,1) 58%, rgba(72,45,253,1) 100%);
+  background: radial-gradient(circle, rgba(34, 193, 195, 1) 9%, rgba(16, 74, 228, 1) 58%, rgba(72, 45, 253, 1) 100%);
   border-radius: 10px;
 }
