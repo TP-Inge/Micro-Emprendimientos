@@ -3,7 +3,7 @@ import VerDetalle from './VerDetalle';
 import "../css/pantallaPrincipal.css";
 import {BuscarEmprendimiento} from '../components/BuscarEmprendimiento'
 
-export const Emprendimientos = ( {setMostrarFormulario, mostrarFormulario} ) => {
+export const Emprendimientos = ( {setMostrarFormulario} ) => {
   const [verDetalle, setVerDetalle] = useState(false);
   const [indiceEmprendimiento, setIndiceEmprendimiento] = useState(null);
   const [emprendimientos, setEmprendimientos] = useState([]);
@@ -35,6 +35,7 @@ export const Emprendimientos = ( {setMostrarFormulario, mostrarFormulario} ) => 
           coordenadaY={emprendimientos[indiceEmprendimiento].coordenadas.y}
           ubicacionDisponible={emprendimientos[indiceEmprendimiento].ubicacionDisponible}
           correo={emprendimientos[indiceEmprendimiento].correo}
+          setVerDetalle={setVerDetalle}
           />
       ) : (
         <div>
