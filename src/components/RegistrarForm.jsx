@@ -10,6 +10,7 @@ const RegistrarForm = ({ setMostrarFormulario }) => {
   const [descripcionEmprendimiento, setDescripcionEmprendimiento] = useState('');
   const [ubicacionEmprendimiento, setUbicacionEmprendimiento] = useState('');
   const [vinculoOrganizacion, setVinculoOrganizacion] = useState('');
+  const [ubicacionDisponible, setUbicacionDisponible] = useState(true);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -29,7 +30,8 @@ const RegistrarForm = ({ setMostrarFormulario }) => {
         descripcion: descripcionEmprendimiento,
         ubicacion: ubicacionEmprendimiento,
         vinculoOrganizacion: vinculoOrganizacion,
-        coordenadas: coordenadas
+        coordenadas: coordenadas,
+        ubicacionDisponible: ubicacionDisponible,
       };
 
       const localStorageData = localStorage.getItem('emprendimientos');
@@ -83,6 +85,15 @@ const RegistrarForm = ({ setMostrarFormulario }) => {
       <div>
         <label htmlFor="vinculoOrganizacion">Vínculo con la Organización:</label>
         <input type="text" id="vinculoOrganizacion" value={vinculoOrganizacion} onChange={(e) => setVinculoOrganizacion(e.target.value)} required />
+      </div>
+      <div>
+        <label htmlFor="ubicacionDisponible">Ubicación Disponible:</label>
+        <input
+          type="checkbox"
+          id="ubicacionDisponible"
+          checked={ubicacionDisponible}
+          onChange={(e) => setUbicacionDisponible(e.target.checked)}
+        />
       </div>
       <button type="submit">Registrarse</button>
     </form>

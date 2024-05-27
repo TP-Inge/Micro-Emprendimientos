@@ -30,6 +30,7 @@ const Emprendimientos = () => {
         <VerDetalle 
           nombreEmprendimiento={emprendimientos[indiceEmprendimiento].nombre} 
           descripcionEmprendimiento={emprendimientos[indiceEmprendimiento].descripcion} 
+          ubicacionDisponible={emprendimientos[indiceEmprendimiento].ubicacionDisponible}
           coordenadaX={emprendimientos[indiceEmprendimiento].coordenadas.x}
           coordenadaY={emprendimientos[indiceEmprendimiento].coordenadas.y}
         />
