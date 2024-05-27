@@ -44,7 +44,6 @@ export const Emprendimientos = ( {setMostrarFormulario} ) => {
           {emprendimientos.map((emprendimiento, index) => (
             <div className="grid-item" key={index}>
               <div id="titulo">{emprendimiento.nombre}</div>
-              <img src="../assets/3891670.png" alt="" />
               <div>{emprendimiento.descripcion}</div>
               <button onClick={() => handleVerDetalle(index)}>
                 Ver detalle
