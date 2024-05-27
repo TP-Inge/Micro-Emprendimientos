@@ -55,6 +55,10 @@ const RegistrarForm = ({ setMostrarFormulario }) => {
     }
   };
 
+  const handleCancelarRegistro = ()=>{
+    setMostrarFormulario(false)
+  }
+
   return (
     <div className="container">
       <div className="form-container">
@@ -97,7 +101,10 @@ const RegistrarForm = ({ setMostrarFormulario }) => {
               onChange={(e) => setUbicacionDisponible(e.target.checked)}
             />
           </div>
-          <button type="submit">Registrarse</button>
+          <div className=' buttons'>
+            <button type="submit">Registrarse</button>
+            <button type="cancelar"onClick={handleCancelarRegistro} >Cancelar registro</button>
+          </div>
         </form>
       </div>
       <div className="preview-container">

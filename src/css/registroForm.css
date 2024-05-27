@@ -44,6 +44,12 @@ textarea {
   background-color: #dcdde1;
 }
 
+.buttons{
+  justify-content: space-between;
+  text-align: center;
+  display: flex;
+}
+
 button[type="submit"] {
   background-color: #192a56;
   color: #dcdde1;
@@ -55,6 +61,20 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
+  background-color: #2f3640;
+}
+
+button[type="cancelar"]{
+  background-color: #eb2f06;
+  color: #dcdde1;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 0px;
+}
+button[type="cancelar"]:hover {
   background-color: #2f3640;
 }
 
