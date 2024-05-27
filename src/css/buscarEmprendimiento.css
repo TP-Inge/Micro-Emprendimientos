@@ -1,37 +1,7 @@
-body {
-    background-color: rgb(0, 175, 175);
-    font-family: Arial, sans-serif;
-  }
-  
-  h2 {
-    text-align: center;
-  }
-  
-  h1 {
-    text-align: center;
-  }
-  
-  #register_button {
-    width: 10%;
-  }
-  
-  .search-section {
-    display: flex;
-    flex-direction: column;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
-  }
-  
-  .search-section h1 {
-    font-size: 24px;
-    color: #000000;
-    margin-bottom: 20px;
-  }
-  
-  .search-bar {
+.search-bar {
     display: flex;
     align-items: center;
+    justify-content: space-between; 
     margin-bottom: 20px;
   }
   
@@ -40,21 +10,44 @@ body {
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 20px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   
   .search-bar button {
     padding: 10px 20px;
-    margin-left: 10px;
     font-size: 16px;
     background-color: #007bff;
     color: #fff;
     border: none;
-    border-radius: 4px;
+    border-radius: 20px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin-left: 10px;
+    margin-bottom:10px ;
   }
   
   .search-bar button:hover {
     background-color: #0056b3;
   }
+  
+  #register_button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 40px;
+    
+  }
+  
+  #register_button:hover {
+    background-color: #0056b3;
+  }
+  
+  h2{
+    text-align: center;
+  }
+  
