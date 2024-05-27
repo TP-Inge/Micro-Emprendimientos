@@ -3,7 +3,7 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import "../css/verdetalle.css"
 
-const VerDetalle = ({ nombreEmprendimiento, descripcionEmprendimiento, coordenadaX, coordenadaY, ubicacionDisponible }) => {
+const VerDetalle = ({ nombreEmprendimiento, descripcionEmprendimiento, coordenadaX, coordenadaY, ubicacionDisponible, correo }) => {
   const position = [coordenadaY, coordenadaX];
 
   return (
@@ -11,6 +11,7 @@ const VerDetalle = ({ nombreEmprendimiento, descripcionEmprendimiento, coordenad
       <div className="details-text">
         <h1>{nombreEmprendimiento}</h1>
         <p>{descripcionEmprendimiento}</p>
+        <footer>Contacto: {correo}</footer>
       </div>
       {ubicacionDisponible ? (
         <div className="details-map">

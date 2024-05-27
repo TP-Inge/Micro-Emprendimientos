@@ -3,7 +3,7 @@ import { useState } from "react";
 import { PantallaPrincipal } from "../src/components/PantallaPrincipal";
 
 function App() {
-  const [submit, setSubmit] = useState(false);
+  const [submit, setSubmit] = useState(true);
 
   const handleSubmit = () => {
 

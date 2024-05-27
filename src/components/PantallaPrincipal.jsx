@@ -1,14 +1,12 @@
 import React, { useState } from "react";
 import "../css/pantallaPrincipal.css";
 import RegistrarForm from "./RegistrarForm";
-import Emprendimientos from './Emprendimientos'
+import {Emprendimientos} from '../components/Emprendimientos'
 
 export const PantallaPrincipal = () => {
   const [mostrarFormulario, setMostrarFormulario] = useState(false);
 
-  const handleRegistrar = () => {
-    setMostrarFormulario(true);
-  };
+
 
   return (
     <div className="container">
@@ -18,19 +16,7 @@ export const PantallaPrincipal = () => {
             setMostrarFormulario={setMostrarFormulario}
           />
         ) : (
-          <>
-            <h1>Busca Emprendimientos</h1>
-            <button id="register_button" onClick={handleRegistrar}>
-              Registrar Emprendimiento
-            </button>
-            <div className="search-bar">
-              <input type="text" placeholder="Buscar emprendimientos..." />
-              <button>Buscar</button>
-            </div>
-            <section className="emprendimientos-section"></section>
-            <h2>Lista de Emprendimientos</h2>
-            <Emprendimientos mostrarFormulario={mostrarFormulario} />
-          </>
+          <Emprendimientos setMostrarFormulario={setMostrarFormulario} />
         )}
       </section>
     </div>

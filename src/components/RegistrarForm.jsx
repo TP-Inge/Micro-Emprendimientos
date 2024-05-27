@@ -82,7 +82,7 @@ const RegistrarForm = ({ setMostrarFormulario }) => {
           </div>
           <div>
             <label htmlFor="ubicacionEmprendimiento">Ubicación del Emprendimiento:</label>
-            <input type="text" id="ubicacionEmprendimiento" value={ubicacionEmprendimiento} onChange={(e) => setUbicacionEmprendimiento(e.target.value)} required />
+            <input type="text" id="ubicacionEmprendimiento"  value={ubicacionEmprendimiento} onChange={(e) => setUbicacionEmprendimiento(e.target.value)} required />
           </div>
           <div>
             <label htmlFor="vinculoOrganizacion">Vínculo con la Organización:</label>

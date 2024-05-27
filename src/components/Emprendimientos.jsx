@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import VerDetalle from './VerDetalle';
 import "../css/pantallaPrincipal.css";
+import {BuscarEmprendimiento} from '../components/BuscarEmprendimiento'
 
-const Emprendimientos = () => {
+export const Emprendimientos = ( {setMostrarFormulario, mostrarFormulario} ) => {
   const [verDetalle, setVerDetalle] = useState(false);
   const [indiceEmprendimiento, setIndiceEmprendimiento] = useState(null);
   const [emprendimientos, setEmprendimientos] = useState([]);
@@ -25,16 +26,19 @@ const Emprendimientos = () => {
   
 
   return (
-    <>
+    <>  
       {verDetalle ? (
         <VerDetalle 
           nombreEmprendimiento={emprendimientos[indiceEmprendimiento].nombre} 
           descripcionEmprendimiento={emprendimientos[indiceEmprendimiento].descripcion} 
-          ubicacionDisponible={emprendimientos[indiceEmprendimiento].ubicacionDisponible}
           coordenadaX={emprendimientos[indiceEmprendimiento].coordenadas.x}
           coordenadaY={emprendimientos[indiceEmprendimiento].coordenadas.y}
-        />
+          ubicacionDisponible={emprendimientos[indiceEmprendimiento].ubicacionDisponible}
+          correo={emprendimientos[indiceEmprendimiento].correo}
+          />
       ) : (
+        <div>
+          <BuscarEmprendimiento setMostrarFormulario={setMostrarFormulario}/>
         <div className="grid-container">
           {emprendimientos.map((emprendimiento, index) => (
             <div className="grid-item" key={index}>
@@ -46,6 +50,8 @@ const Emprendimientos = () => {
               </button>
             </div>
           ))}
+        </div>
+
         </div>
       )}
     </>

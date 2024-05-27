@@ -6,14 +6,14 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #353b48; /* Cambiado */
+    background-color: #353b48;
   }
   
   
   .details-container {
     display: flex;
     justify-content: space-between;
-    background-color: #f9f9f9; /* Cambiado */
+    background-color:  #718093; 
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -30,14 +30,19 @@ body {
   
   .details-text h1 {
     font-size: 24px;
-    color: #dcdde1; 
+    color: #000000; 
     margin-bottom: 10px;
   }
   
   .details-text p {
     font-size: 16px;
-    color: #dcdde1;
+    color: #000000;
     line-height: 1.6;
+    
+  }
+
+  .details-text footer{
+   margin-top: 60px;
   }
   
   
@@ -51,5 +56,10 @@ body {
     height: 100%;
     width: 100%;
     border-radius: 8px;
+  }
+
+  .details-map text{
+    text-align: center;
+    color: aqua;
   }
   
