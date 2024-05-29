@@ -6,6 +6,7 @@ function App() {
   const [submit, setSubmit] = useState(false);
 
   const handleSubmit = () => {
+    localStorage.removeItem("emprendimientos");
 
     const nuevosEmprendimientos = [
       {
