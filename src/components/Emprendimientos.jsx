@@ -45,7 +45,7 @@ export const Emprendimientos = ({ setMostrarFormulario }) => {
         />
       ) : (
         <div>
-          <BuscarEmprendimiento onBuscar={handleBuscar} />
+          <BuscarEmprendimiento onBuscar={handleBuscar} setMostrarFormulario={setMostrarFormulario} />
           <div className="grid-container">
             {filteredEmprendimientos.map((emprendimiento, index) => (
               <div className="grid-item" key={index}>
