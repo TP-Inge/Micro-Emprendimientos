@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../css/pantallaPrincipal.css";
 import RegistrarForm from "./RegistrarForm";
 import {Emprendimientos} from '../components/Emprendimientos'
@@ -7,7 +7,16 @@ import handleAniadirEmprendimientos from '../functions/aniadirEmprendimientos'
 export const PantallaPrincipal = () => {
   const [mostrarFormulario, setMostrarFormulario] = useState(false);
 
-  handleAniadirEmprendimientos()
+
+  useEffect(() => {
+    const isEmprendimientosAdded = localStorage.getItem("isEmprendimientosAdded");
+    if (!isEmprendimientosAdded) {
+      handleAniadirEmprendimientos();
+      localStorage.setItem("isEmprendimientosAdded", "true");
+    }
+  }, []);
+  
+
 
   return (
     <div className="container">
