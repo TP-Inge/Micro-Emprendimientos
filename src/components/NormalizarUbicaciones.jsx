@@ -7,12 +7,12 @@ export const NormalizarUbicaciones = async (ubicacion) => {
     if (data.direccionesNormalizadas && data.direccionesNormalizadas.length > 0) {
       if (data.direccionesNormalizadas.length > 1) {
         for (const direccion of data.direccionesNormalizadas) {
-          if (direccion.tipo === "calle_y_calle" || direccion.tipo === "calle_altura" ) {
-            if (!direccion.direccion.includes(data.cod_partido)) {
+          if (direccion.tipo === "calle_y_calle") {
+            if (!direccion.direccion.includes(direccion.cod_partido)) {
               throw new Error("Debe ingresar el código de partido en la dirección.");
             }
           } else if (direccion.tipo === "calle_altura") {
-            if (!direccion.direccion.includes(data.altura)) {
+            if (!direccion.direccion.includes(direccion.altura)) {
               throw new Error("Debe ingresar la altura en la dirección.");
             }
           } else if (direccion.tipo === "calle") {

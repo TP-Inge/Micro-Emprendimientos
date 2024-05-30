@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {NormalizarUbicaciones} from './NormalizarUbicaciones'
 import "../css/registroForm.css";
+import DibujarMapa from './DibujarMapa';
 
 const RegistrarForm = ({ setMostrarFormulario }) => {
   const [nombre, setNombre] = useState('');
@@ -11,50 +12,10 @@ const RegistrarForm = ({ setMostrarFormulario }) => {
   const [ubicacionEmprendimiento, setUbicacionEmprendimiento] = useState('');
   const [vinculoOrganizacion, setVinculoOrganizacion] = useState('');
   const [ubicacionDisponible, setUbicacionDisponible] = useState(true);
+  const [ubicacionValidada, setUbicacionValidada] = useState(false)
+  const [coordenada, setCoordenada] =useState()
 
-  /*const handleValidar = async (e) => {
-    e.preventDefault();
-    try {
-      const coordenadas = await NormalizarUbicaciones(ubicacionEmprendimiento);
-      
-      if (!coordenadas.x || !coordenadas.y) {
-        alert('Debe ingresar una dirección válida.');
-        return;
-      }
-      
-      const nuevoEmprendimiento = {
-        id: Date.now().toString(),
-        nombre: nombreEmprendimiento,
-        telefono: telefono,
-        correo: correo,
-        descripcion: descripcionEmprendimiento,
-        ubicacion: ubicacionEmprendimiento,
-        vinculoOrganizacion: vinculoOrganizacion,
-        coordenadas: coordenadas,
-        ubicacionDisponible: ubicacionDisponible,
-      };
-
-      const localStorageData = localStorage.getItem('emprendimientos');
-
-      const emprendimientos = localStorageData ? JSON.parse(localStorageData) : [];
-
-      emprendimientos.push(nuevoEmprendimiento);
-
-      const jsonData = JSON.stringify(emprendimientos);
-
-      localStorage.setItem('emprendimientos', jsonData);
-
-      setMostrarFormulario(false);
   
-    } catch (error) {
-      if (error.message === 'Múltiples posibles ubicaciones encontradas. Por favor, sea más específico.') {
-        alert('Se encontraron múltiples posibles ubicaciones. Por favor, sea más específico.');
-      } else {
-        console.error('Error al normalizar la ubicación:', error);
-      }
-    }
-  };*/
-
   const handleValidar = async (e) => {
     e.preventDefault();
     try {
@@ -64,7 +25,13 @@ const RegistrarForm = ({ setMostrarFormulario }) => {
         alert('Debe ingresar una dirección válida.');
         return;
       }
-  
+
+      const coordenadas = {
+        x: direcciones.x,
+        y: direcciones.y
+      };
+
+      setCoordenada(coordenadas)
   
     } catch (error) {
       if (error.message === 'Debe ingresar la altura en la dirección.') {
@@ -78,6 +45,8 @@ const RegistrarForm = ({ setMostrarFormulario }) => {
         alert('Error al normalizar la ubicación. Por favor, intente nuevamente.');
       }
     }
+    setUbicacionValidada(true)
+    
   };
   
   const handleSubmit=()=>{
@@ -167,7 +136,12 @@ const RegistrarForm = ({ setMostrarFormulario }) => {
           <p> {descripcionEmprendimiento} </p>
           <button>ver detalle</button>
         </div>
+
+        {/*<div>
+          {ubicacionValidada && <DibujarMapa position={coordenada}  nombreEmprendimiento={nombreEmprendimiento} /> }
+  </div>*/}
       </div>
+      
     </div>
   );
 };
