@@ -7,7 +7,7 @@ import handleAniadirEmprendimientos from '../functions/aniadirEmprendimientos'
 export const PantallaPrincipal = () => {
   const [mostrarFormulario, setMostrarFormulario] = useState(false);
 
-  handleAniadirEmprendimientos
+  handleAniadirEmprendimientos()
 
   return (
     <div className="container">

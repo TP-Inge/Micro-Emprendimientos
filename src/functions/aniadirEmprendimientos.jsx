@@ -55,8 +55,7 @@ const handleAniadirEmprendimientos = () => {
    
     localStorage.setItem("emprendimientos", JSON.stringify(emprendimientos));
 
-  
-    setSubmit(true);
+
   };
 
   export default handleAniadirEmprendimientos;
