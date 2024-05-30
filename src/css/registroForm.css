@@ -92,7 +92,7 @@ label {
   text-align: center;
 }
 
-.preview-box h1 {
+.preview-box h2 {
   align-content: center;
   height: 5rem;
   background: radial-gradient(circle, rgba(34, 193, 195, 1) 9%, rgba(16, 74, 228, 1) 58%, rgba(72, 45, 253, 1) 100%);
