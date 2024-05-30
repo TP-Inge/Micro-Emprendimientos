@@ -99,7 +99,6 @@ const RegistrarForm = ({ setMostrarFormulario }) => {
     const jsonData = JSON.stringify(emprendimientos);
     localStorage.setItem('emprendimientos', jsonData);
 
-    setMostrarFormulario(false);
   }
 
 
