@@ -1,7 +1,7 @@
 .container {
   display: flex;
-  justify-content: space-between;
   padding: 20px;
+  gap: 30px;
 }
 
 .form-container, .preview-container {
@@ -97,4 +97,28 @@ label {
   height: 5rem;
   background: radial-gradient(circle, rgba(34, 193, 195, 1) 9%, rgba(16, 74, 228, 1) 58%, rgba(72, 45, 253, 1) 100%);
   border-radius: 10px;
+}
+
+.container-checkbox{
+  display: block;
+  margin: 15px;
+}
+#ubi_disponible{
+  margin: 30px;
+}
+#comercio_button{
+
+  margin: 30px;
+}
+#comercio_input{
+  margin-left: 45px;
+}
+
+.form-comercio-container{
+  background-color: #353b48;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+ 
 }
