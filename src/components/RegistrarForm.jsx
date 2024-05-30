@@ -46,8 +46,9 @@ const RegistrarForm = ({ setMostrarFormulario }) => {
         y: direcciones.y
       };
 
+    
       setCoordenada(coordenadas);
-
+      setUbicacionValidada(true)
 
     } catch (error) {
       if (error.message === 'Debe ingresar la altura en la dirección.') {
@@ -61,12 +62,16 @@ const RegistrarForm = ({ setMostrarFormulario }) => {
         alert('Error al normalizar la ubicación. Por favor, intente nuevamente.');
       }
     }
-    setUbicacionValidada(true)
+
 
   };
 
   var handleSubmit = () => {
 
+    if (!ubicacionValidada) {
+      alert('Por favor normalize su ubicación.');
+      return;
+    }
 
     const nuevoEmprendimiento = {
       id: Date.now().toString(),

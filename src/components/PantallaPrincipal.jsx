@@ -3,6 +3,7 @@ import "../css/pantallaPrincipal.css";
 import RegistrarForm from "./RegistrarForm";
 import {Emprendimientos} from '../components/Emprendimientos'
 import handleAniadirEmprendimientos from '../functions/aniadirEmprendimientos'
+import añadir_harcodeado from '../functions/añadir_harcodeado'
 
 export const PantallaPrincipal = () => {
   const [mostrarFormulario, setMostrarFormulario] = useState(false);
@@ -11,13 +12,13 @@ export const PantallaPrincipal = () => {
   useEffect(() => {
     const isEmprendimientosAdded = localStorage.getItem("isEmprendimientosAdded");
     if (!isEmprendimientosAdded) {
-      handleAniadirEmprendimientos();
+      
       localStorage.setItem("isEmprendimientosAdded", "true");
     }
   }, []);
   
-
-
+  
+  
   return (
     <div className="container">
       <section className="search-section">

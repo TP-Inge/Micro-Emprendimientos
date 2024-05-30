@@ -10,7 +10,7 @@ const handleAniadirEmprendimientos = () => {
       descripcion: "Cafetería con ambiente acogedor y variedad de café.",
       ubicacion: "Calle Principal 123, Ciudad, País",
       vinculoOrganizacion: "https://www.cafecentral.com",
-      coordenadas: {
+      coordenada: {
         x: -34.6037, 
         y: -58.3816
       },
@@ -24,7 +24,7 @@ const handleAniadirEmprendimientos = () => {
       descripcion: "Tienda de ropa para hombres y mujeres con las últimas tendencias de moda.",
       ubicacion: "Avenida Comercial 456, Ciudad, País",
       vinculoOrganizacion: "https://www.tiendaropafashion.com",
-      coordenadas: {
+      coordenada: {
         x: -34.522804,
         y: -58.700481
       },
@@ -38,19 +38,21 @@ const handleAniadirEmprendimientos = () => {
       descripcion: "Restaurante con una amplia carta de comida local e internacional.",
       ubicacion: "Plaza Principal 789, Ciudad, País",
       vinculoOrganizacion: "https://www.elsaborrestaurante.com",
-      coordenadas: {
+      coordenada: {
         x: -58.700481,
         y: -34.522804
       },
       ubicacionDisponible: true
     }
   ];
+  
 
   let emprendimientos = JSON.parse(localStorage.getItem("emprendimientos")) || [];
-
   emprendimientos = emprendimientos.concat(nuevosEmprendimientos);
-
   localStorage.setItem("emprendimientos", JSON.stringify(emprendimientos));
+
 };
+
+
 
 export default handleAniadirEmprendimientos;
