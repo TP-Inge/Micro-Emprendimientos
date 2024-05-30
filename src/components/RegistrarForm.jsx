@@ -3,6 +3,9 @@ import { NormalizarUbicaciones } from './NormalizarUbicaciones'
 import "../css/registroForm.css";
 import DibujarMapa from './DibujarMapa';
 
+
+
+
 const RegistrarForm = ({ setMostrarFormulario }) => {
   const [nombre, setNombre] = useState('');
   const [telefono, setTelefono] = useState('');
@@ -16,11 +19,22 @@ const RegistrarForm = ({ setMostrarFormulario }) => {
   const [coordenada, setCoordenada] = useState({ x: -58.3816, y: -34.6037 });
   const [comercioDisponible, set_comercio_disponible] = useState(false);
 
+  const [nombreComercio, set_nombre_comercio] = useState('');
+  const [direccionComercio, setDireccionComercio] = useState('');
+  const [descripcionGeneral, setDescripcionGeneral] = useState('');
+  const [rubroComercio, setRubroComercio] = useState('');
+  const [contactoComercio, setContactoComercio] = useState('');
+  const [formasPago, setFormasPago] = useState('');
+  const [redesSociales, setRedesSociales] = useState('');
+  const [restricciones, setRestricciones] = useState('');
+  const [zonaInfluencia, setZonaInfluencia] = useState('');
 
+
+  var direcciones;
   const handleValidar = async (e) => {
     e.preventDefault();
     try {
-      const direcciones = await NormalizarUbicaciones(ubicacionEmprendimiento);
+      direcciones = await NormalizarUbicaciones(ubicacionEmprendimiento);
 
       if (direcciones.length === 0) {
         alert('Debe ingresar una dirección válida.');
@@ -33,6 +47,7 @@ const RegistrarForm = ({ setMostrarFormulario }) => {
       };
 
       setCoordenada(coordenadas);
+
 
     } catch (error) {
       if (error.message === 'Debe ingresar la altura en la dirección.') {
@@ -50,8 +65,8 @@ const RegistrarForm = ({ setMostrarFormulario }) => {
 
   };
 
-  const handleSubmit = () => {
-    const coordenadas = direcciones[0].coordenadas;
+  var handleSubmit = () => {
+
 
     const nuevoEmprendimiento = {
       id: Date.now().toString(),
@@ -61,8 +76,19 @@ const RegistrarForm = ({ setMostrarFormulario }) => {
       descripcion: descripcionEmprendimiento,
       ubicacion: ubicacionEmprendimiento,
       vinculoOrganizacion: vinculoOrganizacion,
-      coordenadas: coordenadas,
+      coordenada: coordenada,
       ubicacionDisponible: ubicacionDisponible,
+
+      nombreComercio: nombreComercio,
+      direccionComercio: direccionComercio,
+      descripcionGeneral: descripcionGeneral,
+      rubroComercio: rubroComercio,
+      contactoComercio: contactoComercio,
+      formasPago: formasPago,
+      redesSociales: redesSociales,
+      restricciones: restricciones,
+      zonaInfluencia: zonaInfluencia
+
     };
 
     const localStorageData = localStorage.getItem('emprendimientos');
@@ -85,7 +111,16 @@ const RegistrarForm = ({ setMostrarFormulario }) => {
     <>
 
       <div className="container">
-        {comercioDisponible && <Form_comercio />}
+        {comercioDisponible && <Form_comercio 
+            set_nombre_comercio={set_nombre_comercio}
+            setDireccionComercio={setDireccionComercio}
+            setDescripcionGeneral={setDescripcionGeneral}
+            setRubroComercio={setRubroComercio}
+            setContactoComercio={setContactoComercio}
+            setFormasPago={setFormasPago}
+            setRedesSociales={setRedesSociales}
+            setRestricciones={setRestricciones}
+            setZonaInfluencia={setZonaInfluencia}/>}
         <div className="form-container">
           <h2>Registrar Emprendimiento</h2>
           <form>
@@ -142,7 +177,7 @@ const RegistrarForm = ({ setMostrarFormulario }) => {
 
             </div>
             <div className=' buttons'>
-              <button type="submit">Registrarse</button>
+              <button type="submit" onClick={handleSubmit} >Registrarse</button>
               <button type="cancelar" onClick={handleCancelarRegistro} >Cancelar registro</button>
             </div>
           </form>
@@ -163,54 +198,103 @@ const RegistrarForm = ({ setMostrarFormulario }) => {
       </div>
     </>
   );
+
+
 };
 
-
-function Form_comercio() {
+const Form_comercio = ({
+  set_nombre_comercio,
+  setDireccionComercio,
+  setDescripcionGeneral,
+  setRubroComercio,
+  setContactoComercio,
+  setFormasPago,
+  setRedesSociales,
+  setRestricciones,
+  setZonaInfluencia
+}) => {
+  
   return (
     <>
-      <div class='form-comercio-container'>
+      <div className='form-comercio-container'>
         <div>
           <label htmlFor="nombreComercio">Nombre del Comercio:</label>
-          <input type="text" id="nombreComercio" />
+          <input
+            type="text"
+            id="nombreComercio"
+            onChange={(e) => set_nombre_comercio(e.target.value)}
+          />
         </div>
         <div>
           <label htmlFor="direccionComercio">Dirección del Comercio:</label>
-          <input type="text" id="direccionComercio" />
+          <input
+            type="text"
+            id="direccionComercio"
+            onChange={(e) => setDireccionComercio(e.target.value)}
+          />
         </div>
         <div>
           <label htmlFor="descripcionGeneral">Descripción general:</label>
-          <input type="text" id="descripcionGeneral" />
+          <input
+            type="text"
+            id="descripcionGeneral"
+            onChange={(e) => setDescripcionGeneral(e.target.value)}
+          />
         </div>
         <div>
           <label htmlFor="rubroComercio">Rubro:</label>
-          <input type="text" id="rubroComercio" />
+          <input
+            type="text"
+            id="rubroComercio"
+            onChange={(e) => setRubroComercio(e.target.value)}
+          />
         </div>
         <div>
           <label htmlFor="contactoComercio">Forma de contacto:</label>
-          <input type="text" id="contactoComercio" />
+          <input
+            type="text"
+            id="contactoComercio"
+            onChange={(e) => setContactoComercio(e.target.value)}
+          />
         </div>
         <div>
           <label htmlFor="formasPago">Formas de pago:</label>
-          <input type="text" id="formasPago" />
+          <input
+            type="text"
+            id="formasPago"
+            onChange={(e) => setFormasPago(e.target.value)}
+          />
         </div>
         <div>
           <label htmlFor="redesSociales">Redes sociales:</label>
-          <input type="text" id="redesSociales" />
+          <input
+            type="text"
+            id="redesSociales"
+            onChange={(e) => setRedesSociales(e.target.value)}
+          />
         </div>
         <div>
           <label htmlFor="restricciones">Restricciones:</label>
-          <input type="text" id="restricciones" />
+          <input
+            type="text"
+            id="restricciones"
+            onChange={(e) => setRestricciones(e.target.value)}
+          />
         </div>
         <div>
           <label htmlFor="zonaInfluencia">Zona de influencia:</label>
-          <input type="text" id="zonaInfluencia" />
+          <input
+            type="text"
+            id="zonaInfluencia"
+            onChange={(e) => setZonaInfluencia(e.target.value)}
+          />
         </div>
       </div>
 
     </>
   );
 }
+
 
 
 

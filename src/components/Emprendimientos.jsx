@@ -31,11 +31,22 @@ export const Emprendimientos = ( {setMostrarFormulario} ) => {
         <VerDetalle 
           nombreEmprendimiento={emprendimientos[indiceEmprendimiento].nombre} 
           descripcionEmprendimiento={emprendimientos[indiceEmprendimiento].descripcion} 
-          coordenadaX={emprendimientos[indiceEmprendimiento].coordenadas.x}
-          coordenadaY={emprendimientos[indiceEmprendimiento].coordenadas.y}
+          coordenadaX={emprendimientos[indiceEmprendimiento].coordenada.x}
+          coordenadaY={emprendimientos[indiceEmprendimiento].coordenada.y}
           ubicacionDisponible={emprendimientos[indiceEmprendimiento].ubicacionDisponible}
           correo={emprendimientos[indiceEmprendimiento].correo}
           setVerDetalle={setVerDetalle}
+
+          nombreComercio={emprendimientos[indiceEmprendimiento].nombreComercio}
+          direccionComercio={emprendimientos[indiceEmprendimiento].direccionComercio}
+          descripcionGeneral={emprendimientos[indiceEmprendimiento].descripcionGeneral}
+          rubroComercio={emprendimientos[indiceEmprendimiento].rubroComercio}
+          contactoComercio={emprendimientos[indiceEmprendimiento].contactoComercio}
+          formasPago={emprendimientos[indiceEmprendimiento].formasPago}
+          redesSociales={emprendimientos[indiceEmprendimiento].redesSociales}
+          restricciones={emprendimientos[indiceEmprendimiento].restricciones}
+          zonaInfluencia={emprendimientos[indiceEmprendimiento].zonaInfluencia}
+
           />
       ) : (
         <div>
