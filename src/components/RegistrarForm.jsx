@@ -65,16 +65,21 @@ const RegistrarForm = ({ setMostrarFormulario }) => {
         return;
       }
   
-    
+  
     } catch (error) {
-      if (error.message === "Debe especificar la altura") {
-        alert("Debe especificar la altura");
-      } else if(error.message === "Debe ingresar el partido"){
-        alert('Debe ingresar el partido')
-      } 
+      if (error.message === 'Debe ingresar la altura en la dirección.') {
+        alert('Debe ingresar una altura.');
+      } else if (error.message === 'Debe ingresar el código de partido en la dirección.') {
+        alert('Debe ingresar el código de partido en la dirección.');
+      } else if (error.message === 'Debe ser más específico en la ubicación.') {
+        alert('Debe ser más específico en la ubicación.');
+      } else {
+        console.error('Error al normalizar la ubicación:', error);
+        alert('Error al normalizar la ubicación. Por favor, intente nuevamente.');
+      }
     }
   };
-
+  
   const handleSubmit=()=>{
     const coordenadas = direcciones[0].coordenadas;
           
