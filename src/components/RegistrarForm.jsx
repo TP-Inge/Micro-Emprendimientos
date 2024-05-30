@@ -217,7 +217,7 @@ const Form_comercio = ({
     <>
       <div className='form-comercio-container'>
         <div>
-          <label htmlFor="nombreComercio">Nombre del Comercio:</label>
+          <label htmlFor="nombreComercio" required>Nombre del Comercio:</label>
           <input
             type="text"
             id="nombreComercio"
@@ -225,7 +225,7 @@ const Form_comercio = ({
           />
         </div>
         <div>
-          <label htmlFor="direccionComercio">Dirección del Comercio:</label>
+          <label htmlFor="direccionComercio" required>Dirección del Comercio:</label>
           <input
             type="text"
             id="direccionComercio"
@@ -233,7 +233,7 @@ const Form_comercio = ({
           />
         </div>
         <div>
-          <label htmlFor="descripcionGeneral">Descripción general:</label>
+          <label htmlFor="descripcionGeneral" required>Descripción general:</label>
           <input
             type="text"
             id="descripcionGeneral"
@@ -241,7 +241,7 @@ const Form_comercio = ({
           />
         </div>
         <div>
-          <label htmlFor="rubroComercio">Rubro:</label>
+          <label htmlFor="rubroComercio" required>Rubro:</label>
           <input
             type="text"
             id="rubroComercio"
@@ -249,7 +249,7 @@ const Form_comercio = ({
           />
         </div>
         <div>
-          <label htmlFor="contactoComercio">Forma de contacto:</label>
+          <label htmlFor="contactoComercio" required>Forma de contacto:</label>
           <input
             type="text"
             id="contactoComercio"
@@ -257,7 +257,7 @@ const Form_comercio = ({
           />
         </div>
         <div>
-          <label htmlFor="formasPago">Formas de pago:</label>
+          <label htmlFor="formasPago" required>Formas de pago:</label>
           <input
             type="text"
             id="formasPago"
@@ -265,7 +265,7 @@ const Form_comercio = ({
           />
         </div>
         <div>
-          <label htmlFor="redesSociales">Redes sociales:</label>
+          <label htmlFor="redesSociales" required>Redes sociales:</label>
           <input
             type="text"
             id="redesSociales"
@@ -273,7 +273,7 @@ const Form_comercio = ({
           />
         </div>
         <div>
-          <label htmlFor="restricciones">Restricciones:</label>
+          <label htmlFor="restricciones" required>Restricciones:</label>
           <input
             type="text"
             id="restricciones"
@@ -281,7 +281,7 @@ const Form_comercio = ({
           />
         </div>
         <div>
-          <label htmlFor="zonaInfluencia">Zona de influencia:</label>
+          <label htmlFor="zonaInfluencia" required>Zona de influencia:</label>
           <input
             type="text"
             id="zonaInfluencia"
