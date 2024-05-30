@@ -13,7 +13,7 @@ const RegistrarForm = ({ setMostrarFormulario }) => {
   const [vinculoOrganizacion, setVinculoOrganizacion] = useState('');
   const [ubicacionDisponible, setUbicacionDisponible] = useState(true);
   const [ubicacionValidada, setUbicacionValidada] = useState(false)
-  const [coordenada, setCoordenada] =useState()
+  const [coordenada, setCoordenada] = useState({ x: -58.3816, y: -34.6037 });
 
   
   const handleValidar = async (e) => {
@@ -31,7 +31,7 @@ const RegistrarForm = ({ setMostrarFormulario }) => {
         y: direcciones.y
       };
 
-      setCoordenada(coordenadas)
+      setCoordenada(coordenadas);
   
     } catch (error) {
       if (error.message === 'Debe ingresar la altura en la dirección.') {
@@ -137,9 +137,8 @@ const RegistrarForm = ({ setMostrarFormulario }) => {
           <button>ver detalle</button>
         </div>
 
-        {/*<div>
-          {ubicacionValidada && <DibujarMapa position={coordenada}  nombreEmprendimiento={nombreEmprendimiento} /> }
-  </div>*/}
+        
+        <DibujarMapa position={[coordenada.y, coordenada.x]} nombreEmprendimiento={nombreEmprendimiento} ubicacionValidada={ubicacionValidada} />  
       </div>
       
     </div>
