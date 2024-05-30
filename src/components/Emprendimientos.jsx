@@ -37,8 +37,8 @@ export const Emprendimientos = ({ setMostrarFormulario }) => {
         <VerDetalle
           nombreEmprendimiento={emprendimientos[indiceEmprendimiento].nombre}
           descripcionEmprendimiento={emprendimientos[indiceEmprendimiento].descripcion}
-          coordenadaX={emprendimientos[indiceEmprendimiento].coordenada.x}
-          coordenadaY={emprendimientos[indiceEmprendimiento].coordenada.y}
+          coordenadaX={emprendimientos[indiceEmprendimiento].coordenadas.x}
+          coordenadaY={emprendimientos[indiceEmprendimiento].coordenadas.y}
           ubicacionDisponible={emprendimientos[indiceEmprendimiento].ubicacionDisponible}
           correo={emprendimientos[indiceEmprendimiento].correo}
           setVerDetalle={setVerDetalle}
