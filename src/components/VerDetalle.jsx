@@ -20,6 +20,7 @@ const VerDetalle = ({ nombreEmprendimiento, descripcionEmprendimiento, coordenad
 
         <h1>{nombreEmprendimiento}</h1>
         <p>{descripcionEmprendimiento}</p>
+        <p> {ubicacionDisponible ? '' : 'Ubicación no disponible'} </p>
         <img src="src\assets\3891670.png" alt="" className="imagen-empresarial" />
         <footer>Contacto: {correo}</footer>
 
