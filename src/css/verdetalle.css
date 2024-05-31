@@ -25,7 +25,6 @@ body {
   background-color: #007bff;
   border: none;
   border-radius: 2px;
-  
   color: white;
   padding: 2px 10px;
 }
@@ -37,7 +36,11 @@ body {
 .details-text button{
   margin-bottom: 10px;
   background-color: #353b48;
-  
+}
+
+.details-text button:hover{
+  color: #000;
+  background-color: #f1f1f1;
 }
 
 .details-text h1 {

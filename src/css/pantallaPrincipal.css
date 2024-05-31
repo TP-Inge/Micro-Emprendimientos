@@ -64,6 +64,8 @@ ul{
   height: 5rem;
   background-color: #273c75;
   color: white;
+  word-wrap: break-word; 
+  overflow-wrap: break-word;
  
 }
 
