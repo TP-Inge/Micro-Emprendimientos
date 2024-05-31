@@ -10,8 +10,8 @@ export const NormalizarUbicaciones = async (ubicacion) => {
 
     const direccion = data.direccionesNormalizadas[0];
 
-    if (direccion.tipo === "calle_y_calle" && !direccion.direccion.includes(direccion.cod_partido)) {
-      throw new Error("Debe ingresar el código de partido en la dirección.");
+    if (direccion.tipo === "calle_y_calle" && !direccion.direccion.includes(direccion.nombre_partido)) {
+      throw new Error("Debe ingresar el nombre del partido en la dirección.");
     }
 
     if (direccion.tipo === "calle") {

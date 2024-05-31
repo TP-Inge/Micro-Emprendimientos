@@ -50,9 +50,9 @@ const RegistrarForm = ({ setMostrarFormulario }) => {
       if (error.message === "Debe ingresar la altura en la dirección.") {
         alert("Debe ingresar una altura.");
       } else if (
-        error.message === "Debe ingresar el código de partido en la dirección."
+        error.message === "Debe ingresar el nombre del partido en la dirección."
       ) {
-        alert("Debe ingresar el código de partido en la dirección.");
+        alert("Debe ingresar el nombre del partido en la dirección.");
       } else if (error.message === "Debe ser más específico en la ubicación.") {
         alert("Debe ser más específico en la ubicación.");
       } else {
