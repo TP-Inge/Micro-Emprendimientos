@@ -1,16 +1,16 @@
-*{
+* {
   box-sizing: border-box;
 }
 body {
   background: linear-gradient(to bottom, #192b5a, #f1f1f1);
-  background-repeat: no-repeat ;
+  background-repeat: no-repeat;
   font-family: sans-serif;
   display: flex;
   flex-wrap: wrap;
   max-width: 100%;
 }
 
-h1{
+h1 {
   text-align: center;
   margin: auto;
   padding: 1em;
@@ -18,18 +18,18 @@ h1{
   max-width: 50%;
   border-radius: 1em;
 }
-h2{
+h2 {
   margin: 1em;
   color: white;
 }
 
-ul{
+ul {
   list-style: none;
 }
 .grid-container {
   gap: 1em;
   list-style-type: none;
-  grid-template-columns:repeat(5,minmax(100px,250px));
+  grid-template-columns: repeat(5, minmax(100px, 250px));
   display: grid;
   justify-items: stretch;
   align-items: stretch;
@@ -38,24 +38,22 @@ ul{
 }
 
 .grid-item {
- 
-  width: 100%; 
-  max-width: 400px; 
-  min-height: 100px; 
-  border: 1px solid #000; 
-  word-wrap: break-word; 
+  width: 100%;
+  max-width: 400px;
+  min-height: 100px;
+  border: 1px solid #000;
+  word-wrap: break-word;
   overflow-wrap: break-word;
-  padding: 10px; 
+  padding: 10px;
   box-sizing: border-box;
-  display: flex; 
-  flex-direction: column; 
+  display: flex;
+  flex-direction: column;
   border: 1px solid rgba(0, 0, 0, 0.8);
   border-radius: 10px;
   font-size: 20px;
   text-align: center;
   background-color: #f1f1f1d2;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
- 
 }
 
 .grid-item #titulo {
@@ -64,9 +62,8 @@ ul{
   height: 5rem;
   background-color: #273c75;
   color: white;
-  word-wrap: break-word; 
+  word-wrap: break-word;
   overflow-wrap: break-word;
- 
 }
 
 .grid-item img {

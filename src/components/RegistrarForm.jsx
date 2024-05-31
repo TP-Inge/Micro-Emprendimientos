@@ -9,7 +9,8 @@ const RegistrarForm = ({ setMostrarFormulario }) => {
   const [telefono, setTelefono] = useState("");
   const [correo, setCorreo] = useState("");
   const [nombreEmprendimiento, setNombreEmprendimiento] = useState("");
-  const [descripcionEmprendimiento, setDescripcionEmprendimiento] = useState("");
+  const [descripcionEmprendimiento, setDescripcionEmprendimiento] =
+    useState("");
   const [ubicacionEmprendimiento, setUbicacionEmprendimiento] = useState("");
   const [vinculoOrganizacion, setVinculoOrganizacion] = useState("");
   const [ubicacionDisponible, setUbicacionDisponible] = useState(true);
@@ -46,7 +47,7 @@ const RegistrarForm = ({ setMostrarFormulario }) => {
       setCoordenada(coordenadas);
       setUbicacionValidada(true);
     } catch (error) {
-      setUbicacionValidada(false)
+      setUbicacionValidada(false);
       if (error.message === "Debe ingresar la altura en la dirección.") {
         alert("Debe ingresar una altura.");
       } else if (
@@ -65,48 +66,47 @@ const RegistrarForm = ({ setMostrarFormulario }) => {
   };
 
   const handleSubmit = () => {
-    if(ubicacionValidada && ubicacionEmprendimiento!==''){
-        const nuevoEmprendimiento = {
-          id: Date.now().toString(),
-          nombre: nombreEmprendimiento,
-          telefono: telefono,
-          correo: correo,
-          descripcion: descripcionEmprendimiento,
-          ubicacion: ubicacionEmprendimiento,
-          vinculoOrganizacion: vinculoOrganizacion,
-          coordenada: coordenada,
-          ubicacionDisponible: ubicacionDisponible,
-    
-          nombreComercio: nombreComercio,
-          direccionComercio: direccionComercio,
-          descripcionGeneral: descripcionGeneral,
-          rubroComercio: rubroComercio,
-          contactoComercio: contactoComercio,
-          formasPago: formasPago,
-          redesSociales: redesSociales,
-          restricciones: restricciones,
-          zonaInfluencia: zonaInfluencia,
-        };
-    
-        const localStorageData = localStorage.getItem("emprendimientos");
-        const emprendimientos = localStorageData
-          ? JSON.parse(localStorageData)
-          : [];
-    
-        emprendimientos.push(nuevoEmprendimiento);
-    
-        const jsonData = JSON.stringify(emprendimientos);
-        localStorage.setItem("emprendimientos", jsonData);
-        setMostrarFormulario(false)
-    }else{
-      alert('Debe validar la ubicacion')
+    if (ubicacionValidada && ubicacionEmprendimiento !== "") {
+      const nuevoEmprendimiento = {
+        id: Date.now().toString(),
+        nombre: nombreEmprendimiento,
+        telefono: telefono,
+        correo: correo,
+        descripcion: descripcionEmprendimiento,
+        ubicacion: ubicacionEmprendimiento,
+        vinculoOrganizacion: vinculoOrganizacion,
+        coordenada: coordenada,
+        ubicacionDisponible: ubicacionDisponible,
+
+        nombreComercio: nombreComercio,
+        direccionComercio: direccionComercio,
+        descripcionGeneral: descripcionGeneral,
+        rubroComercio: rubroComercio,
+        contactoComercio: contactoComercio,
+        formasPago: formasPago,
+        redesSociales: redesSociales,
+        restricciones: restricciones,
+        zonaInfluencia: zonaInfluencia,
+      };
+
+      const localStorageData = localStorage.getItem("emprendimientos");
+      const emprendimientos = localStorageData
+        ? JSON.parse(localStorageData)
+        : [];
+
+      emprendimientos.push(nuevoEmprendimiento);
+
+      const jsonData = JSON.stringify(emprendimientos);
+      localStorage.setItem("emprendimientos", jsonData);
+      setMostrarFormulario(false);
+    } else {
+      alert("Debe validar la ubicacion");
     }
   };
 
   useEffect(() => {
-    setUbicacionValidada(false)
-  }, [ubicacionEmprendimiento])
-  
+    setUbicacionValidada(false);
+  }, [ubicacionEmprendimiento]);
 
   const handleCancelarRegistro = () => {
     setMostrarFormulario(false);
@@ -130,7 +130,7 @@ const RegistrarForm = ({ setMostrarFormulario }) => {
         )}
         <div className="form-container">
           <h2>Registrar Emprendimiento</h2>
-          <form onSubmit={handleSubmit} >
+          <form onSubmit={handleSubmit}>
             <div>
               <label htmlFor="nombreEmprendimiento">
                 Nombre del Emprendimiento:
@@ -174,10 +174,11 @@ const RegistrarForm = ({ setMostrarFormulario }) => {
               />
             </div>
             <div>
-              <label   htmlFor="descripcionEmprendimiento">
+              <label htmlFor="descripcionEmprendimiento">
                 Descripción del Emprendimiento:
               </label>
-              <textarea className="descripcion-emprendimiento"
+              <textarea
+                className="descripcion-emprendimiento"
                 id="descripcionEmprendimiento"
                 value={descripcionEmprendimiento}
                 onChange={(e) => setDescripcionEmprendimiento(e.target.value)}
@@ -196,7 +197,10 @@ const RegistrarForm = ({ setMostrarFormulario }) => {
                 required
               />
               <div className="container-boton-validar">
-              <button className="boton-validar" onClick={handleValidar}> Validar</button>
+                <button className="boton-validar" onClick={handleValidar}>
+                  {" "}
+                  Validar
+                </button>
               </div>
             </div>
             <div>
@@ -235,9 +239,7 @@ const RegistrarForm = ({ setMostrarFormulario }) => {
               <div></div>
             </div>
             <div className=" buttons">
-            {ubicacionValidada && (
-                <button type="submit">Registrarse</button>
-              )}
+              {ubicacionValidada && <button type="submit">Registrarse</button>}
               <button type="cancelar" onClick={handleCancelarRegistro}>
                 Cancelar registro
               </button>

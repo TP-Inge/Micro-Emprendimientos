@@ -4,7 +4,8 @@
   gap: 30px;
 }
 
-.form-container, .preview-container {
+.form-container,
+.preview-container {
   width: 48%;
 }
 
@@ -15,31 +16,31 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.container-boton-validar{
+.container-boton-validar {
   display: flex;
   justify-content: end;
 }
-.boton-validar{
+.boton-validar {
   border: none;
   background-color: #eb2f06;
   padding: 3px 10px;
   border-radius: 2px;
   font-weight: bold;
   margin-bottom: 0.7em;
-  color: white
+  color: white;
 }
 
-.boton-validar:hover{
-  background-color: #b12506;;
+.boton-validar:hover {
+  background-color: #b12506;
   color: black;
   transition: 0.2s;
 }
 
-.form-container h2, .preview-container h2 {
+.form-container h2,
+.preview-container h2 {
   text-align: center;
   color: #dcdde1;
 }
-
 
 input[type="text"],
 input[type="tel"],
@@ -57,10 +58,10 @@ textarea {
 input[type="text"]:focus,
 input[type="tel"]:focus,
 input[type="email"]:focus,
-textarea:focus{
+textarea:focus {
   border-bottom: solid 3px #48e;
 }
-.buttons{
+.buttons {
   justify-content: space-between;
   text-align: center;
   display: flex;
@@ -80,7 +81,7 @@ button[type="submit"]:hover {
   background-color: #2f3640;
 }
 
-button[type="cancelar"]{
+button[type="cancelar"] {
   background-color: #48e;
   color: #dcdde1;
   padding: 10px 20px;
@@ -100,21 +101,21 @@ label {
 }
 
 .preview-container {
-  max-width: 100%; 
-  overflow: hidden; 
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .preview-box {
-  word-wrap: break-word; 
+  word-wrap: break-word;
   overflow-wrap: break-word;
-  width: 100%; 
-  max-width: 400px; 
-  min-height: 100px; 
-  border: 1px solid #000; 
-  overflow: hidden; 
-  padding: 10px; 
-  box-sizing: border-box; 
-  display: flex; 
+  width: 100%;
+  max-width: 400px;
+  min-height: 100px;
+  border: 1px solid #000;
+  overflow: hidden;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
   flex-direction: column;
   border: 1px solid rgba(0, 0, 0, 0.8);
   border-radius: 10px;
@@ -127,40 +128,39 @@ label {
 
 .preview-box h2 {
   margin: 0 0 10px 0;
-  font-size: 1.5em; 
+  font-size: 1.5em;
   background-color: #192a56;
 }
 
 .preview-box p {
-  margin: 0; 
-  flex-grow: 1; 
-  overflow: hidden; 
-  word-wrap: break-word; 
-  white-space: normal; 
+  margin: 0;
+  flex-grow: 1;
+  overflow: hidden;
+  word-wrap: break-word;
+  white-space: normal;
   color: #000;
 }
 
 .preview-box button {
-  align-self: flex-start; 
-  margin: auto; 
+  align-self: flex-start;
+  margin: auto;
 }
 
-
-.container-checkbox{
+.container-checkbox {
   display: block;
   margin: 15px;
 }
-#ubi_disponible{
+#ubi_disponible {
   margin: 30px;
 }
-#comercio_button{
+#comercio_button {
   margin: 30px;
 }
-#comercio_input{
+#comercio_input {
   margin-left: 45px;
 }
 
-.form-comercio-container{
+.form-comercio-container {
   background-color: #353b48;
   padding: 20px;
   border-radius: 8px;

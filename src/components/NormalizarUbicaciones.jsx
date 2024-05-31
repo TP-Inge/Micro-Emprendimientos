@@ -1,6 +1,8 @@
 export const NormalizarUbicaciones = async (ubicacion) => {
   try {
-    const url = `http://servicios.usig.buenosaires.gob.ar/normalizar/?direccion=${encodeURIComponent(ubicacion)}`;
+    const url = `http://servicios.usig.buenosaires.gob.ar/normalizar/?direccion=${encodeURIComponent(
+      ubicacion
+    )}`;
     const resp = await fetch(url);
     const data = await resp.json();
 
@@ -10,7 +12,10 @@ export const NormalizarUbicaciones = async (ubicacion) => {
 
     const direccion = data.direccionesNormalizadas[0];
 
-    if (direccion.tipo === "calle_y_calle" && !direccion.direccion.includes(direccion.nombre_partido)) {
+    if (
+      direccion.tipo === "calle_y_calle" &&
+      !direccion.direccion.includes(direccion.nombre_partido)
+    ) {
       throw new Error("Debe ingresar el nombre del partido en la dirección.");
     }
 
@@ -20,10 +25,10 @@ export const NormalizarUbicaciones = async (ubicacion) => {
 
     return {
       x: direccion.coordenadas.x,
-      y: direccion.coordenadas.y
+      y: direccion.coordenadas.y,
     };
   } catch (error) {
-    console.error('Error al normalizar la ubicación:', error);
+    console.error("Error al normalizar la ubicación:", error);
     throw error;
   }
 };

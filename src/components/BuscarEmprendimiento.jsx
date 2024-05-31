@@ -2,26 +2,27 @@ import React, { useState } from "react";
 import "../css/buscarEmprendimiento.css";
 
 export const BuscarEmprendimiento = ({ setMostrarFormulario, onBuscar }) => {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
 
   const handleRegistrar = () => {
     setMostrarFormulario(true);
   };
-  
+
   const handleChange = (event) => {
     setSearchTerm(event.target.value);
     onBuscar(event.target.value);
   };
   return (
     <>
-    <h1> Micro Emprendimientos</h1>
-      
+      <h1> Micro Emprendimientos</h1>
+
       <div className="search-bar">
-        <input 
-          type="text" 
+        <input
+          type="text"
           placeholder="Buscar emprendimientos..."
           value={searchTerm}
-          onChange={handleChange} />
+          onChange={handleChange}
+        />
         <button>Buscar</button>
       </div>
       <div className="container-register-button">
