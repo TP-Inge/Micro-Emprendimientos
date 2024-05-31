@@ -3,6 +3,7 @@ import VerDetalle from './VerDetalle';
 import "../css/pantallaPrincipal.css";
 import { BuscarEmprendimiento } from '../components/BuscarEmprendimiento';
 
+
 export const Emprendimientos = ({ setMostrarFormulario }) => {
   const [verDetalle, setVerDetalle] = useState(false);
   const [indiceEmprendimiento, setIndiceEmprendimiento] = useState(null);

@@ -36,73 +36,74 @@ const RegistrarForm = ({ setMostrarFormulario }) => {
     try {
       direcciones = await NormalizarUbicaciones(ubicacionEmprendimiento);
 
-      if (direcciones.length === 0) {
-        alert('Debe ingresar una dirección válida.');
-        return;
-      }
 
       const coordenadas = {
         x: direcciones.x,
         y: direcciones.y
       };
 
-    
       setCoordenada(coordenadas);
-      setUbicacionValidada(true)
+      setUbicacionValidada(true);
 
-    } catch (error) {
-      if (error.message === 'Debe ingresar la altura en la dirección.') {
-        alert('Debe ingresar una altura.');
-      } else if (error.message === 'Debe ingresar el código de partido en la dirección.') {
+    }
+    catch (error) {
+
+      if (error.message === 'Debe ingresar el código de partido en la dirección.') {
         alert('Debe ingresar el código de partido en la dirección.');
-      } else if (error.message === 'Debe ser más específico en la ubicación.') {
-        alert('Debe ser más específico en la ubicación.');
-      } else {
-        console.error('Error al normalizar la ubicación:', error);
-        alert('Error al normalizar la ubicación. Por favor, intente nuevamente.');
       }
+      else if (error.message === 'Debe ser más específico en la ubicación.') {
+        alert('Debe ser más específico en la ubicación.');
+      }
+      else {
+        alert('calle inexistente');
+      }
+      setUbicacionValidada(false);
     }
 
 
   };
 
-  var handleSubmit = () => {
+  var handleSubmit =  () => {
 
+    handleValidar();
     if (!ubicacionValidada) {
-      alert('Por favor normalize su ubicación.');
-      return;
+      alert("Debe validar la ubicación antes de registrar el emprendimiento.");
+    
+    }
+    else {
+
+      const nuevoEmprendimiento = {
+        id: Date.now().toString(),
+        nombre: nombreEmprendimiento,
+        telefono: telefono,
+        correo: correo,
+        descripcion: descripcionEmprendimiento,
+        ubicacion: ubicacionEmprendimiento,
+        vinculoOrganizacion: vinculoOrganizacion,
+        coordenada: coordenada,
+        ubicacionDisponible: ubicacionDisponible,
+
+        nombreComercio: nombreComercio,
+        direccionComercio: direccionComercio,
+        descripcionGeneral: descripcionGeneral,
+        rubroComercio: rubroComercio,
+        contactoComercio: contactoComercio,
+        formasPago: formasPago,
+        redesSociales: redesSociales,
+        restricciones: restricciones,
+        zonaInfluencia: zonaInfluencia
+
+      };
+
+      const localStorageData = localStorage.getItem('emprendimientos');
+      const emprendimientos = localStorageData ? JSON.parse(localStorageData) : [];
+
+      emprendimientos.push(nuevoEmprendimiento);
+
+      const jsonData = JSON.stringify(emprendimientos);
+      localStorage.setItem('emprendimientos', jsonData);
     }
 
-    const nuevoEmprendimiento = {
-      id: Date.now().toString(),
-      nombre: nombreEmprendimiento,
-      telefono: telefono,
-      correo: correo,
-      descripcion: descripcionEmprendimiento,
-      ubicacion: ubicacionEmprendimiento,
-      vinculoOrganizacion: vinculoOrganizacion,
-      coordenada: coordenada,
-      ubicacionDisponible: ubicacionDisponible,
-
-      nombreComercio: nombreComercio,
-      direccionComercio: direccionComercio,
-      descripcionGeneral: descripcionGeneral,
-      rubroComercio: rubroComercio,
-      contactoComercio: contactoComercio,
-      formasPago: formasPago,
-      redesSociales: redesSociales,
-      restricciones: restricciones,
-      zonaInfluencia: zonaInfluencia
-
-    };
-
-    const localStorageData = localStorage.getItem('emprendimientos');
-    const emprendimientos = localStorageData ? JSON.parse(localStorageData) : [];
-
-    emprendimientos.push(nuevoEmprendimiento);
-
-    const jsonData = JSON.stringify(emprendimientos);
-    localStorage.setItem('emprendimientos', jsonData);
 
   }
 
@@ -115,16 +116,16 @@ const RegistrarForm = ({ setMostrarFormulario }) => {
     <>
 
       <div className="container">
-        {comercioDisponible && <Form_comercio 
-            set_nombre_comercio={set_nombre_comercio}
-            setDireccionComercio={setDireccionComercio}
-            setDescripcionGeneral={setDescripcionGeneral}
-            setRubroComercio={setRubroComercio}
-            setContactoComercio={setContactoComercio}
-            setFormasPago={setFormasPago}
-            setRedesSociales={setRedesSociales}
-            setRestricciones={setRestricciones}
-            setZonaInfluencia={setZonaInfluencia}/>}
+        {comercioDisponible && <Form_comercio
+          set_nombre_comercio={set_nombre_comercio}
+          setDireccionComercio={setDireccionComercio}
+          setDescripcionGeneral={setDescripcionGeneral}
+          setRubroComercio={setRubroComercio}
+          setContactoComercio={setContactoComercio}
+          setFormasPago={setFormasPago}
+          setRedesSociales={setRedesSociales}
+          setRestricciones={setRestricciones}
+          setZonaInfluencia={setZonaInfluencia} />}
         <div className="form-container">
           <h2>Registrar Emprendimiento</h2>
           <form>
@@ -217,7 +218,7 @@ const Form_comercio = ({
   setRestricciones,
   setZonaInfluencia
 }) => {
-  
+
   return (
     <>
       <div className='form-comercio-container'>

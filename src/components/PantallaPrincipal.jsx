@@ -8,7 +8,7 @@ import añadir_harcodeado from '../functions/añadir_harcodeado'
 export const PantallaPrincipal = () => {
   const [mostrarFormulario, setMostrarFormulario] = useState(false);
 
-
+ 
   useEffect(() => {
     const isEmprendimientosAdded = localStorage.getItem("isEmprendimientosAdded");
     if (!isEmprendimientosAdded) {
@@ -17,7 +17,7 @@ export const PantallaPrincipal = () => {
     }
   }, []);
   
-  
+
   
   return (
     <div className="container">
