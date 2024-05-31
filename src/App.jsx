@@ -1,4 +1,4 @@
-import Login from "../src/components/Login";
+
 import { PantallaPrincipal } from "../src/components/PantallaPrincipal";
 
 function App() {
