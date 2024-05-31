@@ -14,9 +14,9 @@ const RegistrarForm = ({ setMostrarFormulario }) => {
   const [ubicacionDisponible, setUbicacionDisponible] = useState(true);
   const [ubicacionValidada, setUbicacionValidada] = useState(false);
   const [coordenada, setCoordenada] = useState({ x: -58.3816, y: -34.6037 });
-  const [comercioDisponible, set_comercio_disponible] = useState(false);
+  const [comercioDisponible, setComercioDisponible] = useState(false);
 
-  const [nombreComercio, set_nombre_comercio] = useState("");
+  const [nombreComercio, setNombreComercio] = useState("");
   const [direccionComercio, setDireccionComercio] = useState("");
   const [descripcionGeneral, setDescripcionGeneral] = useState("");
   const [rubroComercio, setRubroComercio] = useState("");
@@ -116,7 +116,7 @@ const RegistrarForm = ({ setMostrarFormulario }) => {
       <div className="container">
         {comercioDisponible && (
           <Form_comercio
-            set_nombre_comercio={set_nombre_comercio}
+            set_nombre_comercio={setNombreComercio}
             setDireccionComercio={setDireccionComercio}
             setDescripcionGeneral={setDescripcionGeneral}
             setRubroComercio={setRubroComercio}
@@ -227,7 +227,7 @@ const RegistrarForm = ({ setMostrarFormulario }) => {
                 type="checkbox"
                 id="comercio_input"
                 checked={comercioDisponible}
-                onChange={(e) => set_comercio_disponible(e.target.checked)}
+                onChange={(e) => setComercioDisponible(e.target.checked)}
               />
               <div></div>
             </div>
