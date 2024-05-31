@@ -34,13 +34,23 @@ ul{
   justify-items: stretch;
   align-items: stretch;
   justify-content: center;
+  max-width: 100%;
 }
 
 .grid-item {
+ 
+  width: 100%; /* La caja ocupará el 100% del ancho del contenedor principal */
+  max-width: 400px; /* Define un ancho máximo para la caja */
+  min-height: 100px; /* Define una altura mínima para la caja */
+  border: 1px solid #000; /* Añade un borde para visualizar mejor la caja */
+  word-wrap: break-word; 
+  overflow-wrap: break-word;
+  padding: 10px; /* Añade espacio interno dentro de la caja */
+  box-sizing: border-box; /* Incluye el padding y el borde en el tamaño total de la caja */
+  display: flex; /* Utiliza flexbox para el contenido interno */
+  flex-direction: column; 
   border: 1px solid rgba(0, 0, 0, 0.8);
   border-radius: 10px;
-  padding: 0.3em;
-  margin: 10px;
   font-size: 20px;
   text-align: center;
   background-color: #f1f1f1d2;

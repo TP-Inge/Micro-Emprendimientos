@@ -15,22 +15,31 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.container-boton-validar{
+  display: flex;
+  justify-content: end;
+}
+.boton-validar{
+  border: none;
+  background-color: #eb2f06;
+  padding: 3px 10px;
+  border-radius: 2px;
+  font-weight: bold;
+  margin-bottom: 0.7em;
+  color: white
+}
+
+.boton-validar:hover{
+  background-color: #b12506;;
+  color: black;
+  transition: 0.2s;
+}
+
 .form-container h2, .preview-container h2 {
   text-align: center;
   color: #dcdde1;
 }
 
-.preview-box {
-  border: 1px solid #273c75;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.preview-box p {
-  margin: 10px 0;
-  color: #dcdde1;
-}
 
 input[type="text"],
 input[type="tel"],
@@ -42,8 +51,15 @@ textarea {
   border: 1px solid #ccc;
   border-radius: 4px;
   background-color: #dcdde1;
+  outline: none;
 }
 
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="email"]:focus,
+textarea:focus{
+  border-bottom: solid 3px #48e;
+}
 .buttons{
   justify-content: space-between;
   text-align: center;
@@ -65,7 +81,7 @@ button[type="submit"]:hover {
 }
 
 button[type="cancelar"]{
-  background-color: #eb2f06;
+  background-color: #48e;
   color: #dcdde1;
   padding: 10px 20px;
   border: none;
@@ -83,21 +99,52 @@ label {
   color: #dcdde1;
 }
 
+.preview-container {
+  max-width: 100%; /* Asegura que el contenedor principal no se desborde */
+  overflow: hidden; /* Oculta cualquier contenido que se desborde */
+}
+
 .preview-box {
+  word-wrap: break-word; 
+  overflow-wrap: break-word;
+  width: 100%; /* La caja ocupará el 100% del ancho del contenedor principal */
+  max-width: 400px; /* Define un ancho máximo para la caja */
+  min-height: 100px; /* Define una altura mínima para la caja */
+  border: 1px solid #000; /* Añade un borde para visualizar mejor la caja */
+  overflow: hidden; /* Oculta cualquier contenido que se desborde */
+  padding: 10px; /* Añade espacio interno dentro de la caja */
+  box-sizing: border-box; /* Incluye el padding y el borde en el tamaño total de la caja */
+  display: flex; /* Utiliza flexbox para el contenido interno */
+  flex-direction: column; /* Alinea el contenido en columna */
   border: 1px solid rgba(0, 0, 0, 0.8);
   border-radius: 10px;
-  padding: 10px;
-  margin: 10px;
-  font-size: 30px;
+  font-size: 20px;
   text-align: center;
+  background-color: #f1f1f1d2;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  margin: auto;
 }
 
 .preview-box h2 {
-  align-content: center;
-  height: 5rem;
-  background: radial-gradient(circle, rgba(34, 193, 195, 1) 9%, rgba(16, 74, 228, 1) 58%, rgba(72, 45, 253, 1) 100%);
-  border-radius: 10px;
+  margin: 0 0 10px 0; /* Margen superior e inferior para el título */
+  font-size: 1.5em; /* Tamaño de fuente del título */
+  background-color: #192a56;
 }
+
+.preview-box p {
+  margin: 0; /* Elimina el margen para evitar desbordamiento */
+  flex-grow: 1; /* Permite que el párrafo crezca para ocupar el espacio disponible */
+  overflow: hidden; /* Oculta cualquier contenido que se desborde */
+  word-wrap: break-word; /* Permite que las palabras largas se dividan y ajusten dentro de la caja */
+  white-space: normal; /* Permite que el texto se ajuste a múltiples líneas */
+  color: #000;
+}
+
+.preview-box button {
+  align-self: flex-start; /* Alinea el botón al principio del contenedor */
+  margin: auto; /* Añade espacio superior al botón */
+}
+
 
 .container-checkbox{
   display: block;
@@ -107,7 +154,6 @@ label {
   margin: 30px;
 }
 #comercio_button{
-
   margin: 30px;
 }
 #comercio_input{
@@ -119,6 +165,4 @@ label {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  
- 
 }

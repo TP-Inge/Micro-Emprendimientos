@@ -174,10 +174,10 @@ const RegistrarForm = ({ setMostrarFormulario }) => {
               />
             </div>
             <div>
-              <label htmlFor="descripcionEmprendimiento">
+              <label   htmlFor="descripcionEmprendimiento">
                 Descripción del Emprendimiento:
               </label>
-              <textarea
+              <textarea className="descripcion-emprendimiento"
                 id="descripcionEmprendimiento"
                 value={descripcionEmprendimiento}
                 onChange={(e) => setDescripcionEmprendimiento(e.target.value)}
@@ -195,7 +195,9 @@ const RegistrarForm = ({ setMostrarFormulario }) => {
                 onChange={(e) => setUbicacionEmprendimiento(e.target.value)}
                 required
               />
-              <button onClick={handleValidar}> validar</button>
+              <div className="container-boton-validar">
+              <button className="boton-validar" onClick={handleValidar}> Validar</button>
+              </div>
             </div>
             <div>
               <label htmlFor="vinculoOrganizacion">
