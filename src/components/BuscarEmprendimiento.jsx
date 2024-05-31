@@ -7,21 +7,15 @@ export const BuscarEmprendimiento = ({ setMostrarFormulario, onBuscar }) => {
   const handleRegistrar = () => {
     setMostrarFormulario(true);
   };
-
-
- 
-
+  
   const handleChange = (event) => {
     setSearchTerm(event.target.value);
     onBuscar(event.target.value);
   };
   return (
     <>
-      <div>
-        <button id="register_button" onClick={handleRegistrar}>
-          Registrar Emprendimiento
-        </button>
-      </div>
+    <h1> Micro Emprendimientos</h1>
+      
       <div className="search-bar">
         <input 
           type="text" 
@@ -29,6 +23,11 @@ export const BuscarEmprendimiento = ({ setMostrarFormulario, onBuscar }) => {
           value={searchTerm}
           onChange={handleChange} />
         <button>Buscar</button>
+      </div>
+      <div className="container-register-button">
+        <button id="register_button" onClick={handleRegistrar}>
+          Registrar Emprendimiento
+        </button>
       </div>
       <section className="emprendimientos-section"></section>
       <h2>Lista de Emprendimientos</h2>

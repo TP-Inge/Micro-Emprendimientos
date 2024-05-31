@@ -1,19 +1,40 @@
+body{
+  max-width: 100%;
+  width:100vw;
+}
+
+.ul-header{
+  display: flex;
+  justify-content: start;
+  margin-right: 10em;
+}
+
 .search-bar {
     display: flex;
     align-items: center;
     justify-content: space-between; 
     margin-bottom: 20px;
+    margin-top: 1em;
+  }
+
+  .container-register-button{
+    display: flex;
+    justify-content: center;
   }
   
   .search-bar input[type="text"] {
     flex: 1;
+    outline: none;
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 20px; 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border  ;
   }
-  
+  .search-bar input[type="text"]:focus{
+    border: solid 1px #000;
+  }
   .search-bar button {
     padding: 10px 20px;
     font-size: 16px;
@@ -39,7 +60,6 @@
     padding: 10px 20px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin-bottom: 40px;
     
   }
   
