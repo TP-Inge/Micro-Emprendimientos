@@ -10,6 +10,7 @@ const handleAniadirEmprendimientos = () => {
       descripcion: "Cafetería con ambiente acogedor y variedad de café.",
       ubicacion: "Calle Principal 123, Ciudad, País",
       vinculoOrganizacion: "https://www.cafecentral.com",
+      nombreComercio: '',
       coordenada: {
         x: -34.6037, 
         y: -58.3816
@@ -24,6 +25,7 @@ const handleAniadirEmprendimientos = () => {
       descripcion: "Tienda de ropa para hombres y mujeres con las últimas tendencias de moda.",
       ubicacion: "Avenida Comercial 456, Ciudad, País",
       vinculoOrganizacion: "https://www.tiendaropafashion.com",
+      nombreComercio: '',
       coordenada: {
         x: -34.522804,
         y: -58.700481
@@ -38,6 +40,7 @@ const handleAniadirEmprendimientos = () => {
       descripcion: "Restaurante con una amplia carta de comida local e internacional.",
       ubicacion: "Plaza Principal 789, Ciudad, País",
       vinculoOrganizacion: "https://www.elsaborrestaurante.com",
+      nombreComercio: '',
       coordenada: {
         x: -58.700481,
         y: -34.522804
