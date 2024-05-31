@@ -29,7 +29,7 @@ ul{
 .grid-container {
   gap: 1em;
   list-style-type: none;
-  grid-template-columns:repeat(3,minmax(100px,250px));
+  grid-template-columns:repeat(5,minmax(100px,250px));
   display: grid;
   justify-items: stretch;
   align-items: stretch;
